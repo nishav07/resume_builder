@@ -10,6 +10,7 @@ app.get("/myresume" , (req,res) => {
     res.send("hello world")
 })
 
+
 app.use(express.urlencoded({ extended:true }));
 // app.use('/uploads', express.static('uploads'));
 // app.use(methodOverride('_method'));
@@ -29,4 +30,8 @@ app.get("/" , (req,res) => {
 
 app.get("/form" , (req,res) => {
     res.render("form.ejs");
+})
+
+app.post("/form" , (req,res) => {
+    let details = req.body;
 })
