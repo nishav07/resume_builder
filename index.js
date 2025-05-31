@@ -6,6 +6,10 @@ const path = require('path');
 // const { v4: uuidv4 } = require('uuid');
 // const methodOverride = require('method-override');
 
+app.get("/myresume" , (req,res) => {
+    res.send("hello world")
+})
+
 app.use(express.urlencoded({ extended:true }));
 // app.use('/uploads', express.static('uploads'));
 // app.use(methodOverride('_method'));
@@ -18,6 +22,11 @@ app.listen(port, () => {
 })
 
 app.get("/" , (req,res) => {
-    res.send("hello world");
+    const b = req.body;
+    const par = req.params;
+    res.render("index.ejs");
 })
 
+app.get("/form" , (req,res) => {
+    res.render("form.ejs");
+})
