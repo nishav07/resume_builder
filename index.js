@@ -10,7 +10,6 @@ app.get("/myresume" , (req,res) => {
     res.send("hello world")
 })
 
-
 app.use(express.urlencoded({ extended:true }));
 // app.use('/uploads', express.static('uploads'));
 // app.use(methodOverride('_method'));
