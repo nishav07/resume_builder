@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
+
+        /* #4a5759  , #b0c4b1 , #dedbd2 , #f7e1d7 , #edafb8*/
         *{
             margin: 0;
             padding: 0;
@@ -13,9 +15,10 @@
         }
 
         nav{
-            height: 10vh;
+            height: 12vh;
             width:90%;
-            background-color: royalblue;
+            background-color:#4a5759;
+            color: #f7e1d7;
             display: flex;
             align-items:center;
             justify-content: space-between;
@@ -31,8 +34,20 @@
         }
 
         ul li{
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 500;
+        }
+
+        main{
+            height:calc(100vh - 12vh);
+            width:90%;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            padding-left: 5%;
+            padding-right: 5%; 
+            background-color: #dedbd2;
+            color: #4a5759;
         }
     </style>
 </head>
@@ -45,5 +60,8 @@
             <li>My resume</li>
         </ul>
     </nav>
+    <main>
+        <h1>hello world</h1>
+    </main>
 </body>
 </html>
