@@ -35,6 +35,29 @@
             font-size:2.5rem;
             color: #f7e1d7;
         }
+
+         main{
+            height:calc(100vh - 12vh);
+            width:80%;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            padding-left: 10%;
+            padding-right:10%; 
+            background-color: #dedbd2;
+            color:#f7e1d7;;
+        }
+
+        .container{
+            height: 70vh;
+            width: 100%;
+            background-color:#b0c4b1;
+            border-radius: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
@@ -42,5 +65,14 @@
         <h2>logo</h2>
        <a href="http://localhost:8080/"> <i class="fa-solid fa-circle-left"></i></a>
     </nav>
+    <main>
+        <div class="container">
+            <form action="" method="post">
+                <input type="text" placeholder="Enter your name" name="name" required>
+                <input type="email" name="email" placeholder="xyz@email.com" required>
+                <input type="tel" name="phone" required>
+            </form>
+        </div>
+    </main>
 </body>
 </html>

@@ -26,5 +26,5 @@ app.get("/form" , (req,res) => {
 })
 
 app.post("/form" , (req,res) => {
-    let details = req.body;
+    
 })
