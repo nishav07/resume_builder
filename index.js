@@ -2,17 +2,12 @@ const express = require('express');
 const app = express();
 const port = 8080;
 const path = require('path');
-// const multer = require('multer');
-// const { v4: uuidv4 } = require('uuid');
-// const methodOverride = require('method-override');
-
-app.get("/myresume" , (req,res) => {
-    res.send("hello world")
-})
-
+const multer = require('multer');
+const { v4: uuidv4 } = require('uuid');
+const methodOverride = require('method-override');
 app.use(express.urlencoded({ extended:true }));
-// app.use('/uploads', express.static('uploads'));
-// app.use(methodOverride('_method'));
+app.use('/uploads', express.static('uploads'));
+app.use(methodOverride('_method'));
 app.set("view engine" , "ejs");
 app.set("views" , path.join(__dirname , "views"));
 app.use(express.static(path.join(__dirname , "public")));
@@ -22,8 +17,7 @@ app.listen(port, () => {
 })
 
 app.get("/" , (req,res) => {
-    const b = req.body;
-    const par = req.params;
+    const params = req.params;
     res.render("index.ejs");
 })
 
