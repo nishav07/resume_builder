@@ -27,5 +27,6 @@ app.get("/form" , (req,res) => {
 
 app.post("/form" , (req,res) => {
     console.log(req.body);
+    const data = req.body;
     res.send("form submmited");
 })
