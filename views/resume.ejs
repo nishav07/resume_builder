@@ -1,11 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+  <meta charset="UTF-8">
+  <title><%= data.name %> - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --background: #f9f9fb;
+      --text-dark: #2d3436;
+      --section-bg: #ffffff;
+      --accent: #a29bfe;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: auto;
+      background: var(--section-bg);
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      font-size: 15px;
+    }
+
+    .section {
+      padding: 25px 30px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--primary);
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .section h2::before {
+      content: "▌";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .info-block p {
+      margin: 6px 0;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .badge-list li {
+      background: var(--accent);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 14px;
+    }
+
+    .download-btn {
+      text-align: center;
+      padding: 25px;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4b44c3;
+    }
+
+    .faded {
+      color: #888;
+      font-size: 13px;
+    }
+
+    .section p.empty-fill {
+      background: #f1f1f1;
+      color: #aaa;
+      padding: 12px;
+      border-radius: 8px;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <div class="resume-container" id="resume">
+    <div class="header">
+      <h1><%= data.name %></h1>
+      <p><%= data.email %> | <%= data.phone %> | <%= data.adress %></p>
+    </div>
+
+    <div class="section">
+      <h2>Profile Summary</h2>
+      <p>
+        Hello! I'm <%= data.name %>. I completed my <%= data.degree %> from <%= data.collage %> in <%= data.passyear %>. I'm passionate about growing in the tech industry and currently exploring skills in <%= data.skills || "technology" %>. My CGPA is <%= data.CGPA %>.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <div class="info-block">
+        <p><strong>Degree:</strong> <%= data.degree %></p>
+        <p><strong>Institution:</strong> <%= data.collage %></p>
+        <p><strong>Year of Passing:</strong> <%= data.passyear %></p>
+        <p><strong>CGPA:</strong> <%= data.CGPA %></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <% if (data.skills && data.skills.trim()) { %>
+        <ul class="badge-list">
+          <% data.skills.split(',').forEach(skill => { %>
+            <li><%= skill.trim() %></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p class="empty-fill">No skills added. But I’m constantly learning!</p>
+      <% } %>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <% if (data.project && data.project.trim()) { %>
+        <ul class="badge-list">
+          <% data.project.split(',').forEach(project => { %>
+            <li><%= project.trim() %></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p class="empty-fill">Still exploring real-world project opportunities.</p>
+      <% } %>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <% if (data.experience && parseInt(data.experience) > 0) { %>
+        <p><%= data.experience %> years of experience in relevant field.</p>
+      <% } else { %>
+        <p class="empty-fill">Fresher - actively looking to gain real-world experience.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="download-btn">
+    <button onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const resume = document.getElementById('resume');
+      html2pdf().from(resume).save('Resume.pdf');
+    }
+  </script>
+
 </body>
 </html>
