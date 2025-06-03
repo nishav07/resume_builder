@@ -5,6 +5,7 @@ const path = require('path');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 const methodOverride = require('method-override');
+const session = require('express-session');
 app.use(express.urlencoded({ extended:true }));
 app.use('/uploads', express.static('uploads'));
 app.use(methodOverride('_method'));
@@ -34,6 +35,11 @@ app.get("/form" , (req,res) => {
 app.post("/form" , (req,res) => {
     console.log(req.body);
     const data = req.body;
+    req.session.resumedata = req.body;
     res.render("resume.ejs" , { data });
 })
 
+app.get("/templates" , (req,res) => {
+    const data = req.session.resumedata;
+    console.log(data);
+})
