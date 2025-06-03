@@ -42,4 +42,5 @@ app.post("/form" , (req,res) => {
 app.get("/templates" , (req,res) => {
     const data = req.session.resumedata;
     console.log(data);
+    res.render("template.ejs" , { data })
 })
