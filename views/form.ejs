@@ -6,7 +6,13 @@
     <title>Form</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-         /* #4a5759  , #b0c4b1 , #dedbd2 , #f7e1d7 , #edafb8*/
+        :root {
+      --main: #adb5bd;
+      --background: #f8f9fa;
+      --text: #212529;
+      --secbg: #ced4da;
+      --bg: #dee2e6;
+        }
         *{
             margin: 0;
             padding: 0;
@@ -14,15 +20,16 @@
             list-style-type: none;
             font-family:Arial, Helvetica, sans-serif;
             text-decoration: none;
+            color: var(--text);
         }
 
-        a{
-            color:#f7e1d7;
+        body{
+            background-color:var(--bg);
         }
+
         nav{
             height: 12vh;
             width:80%;
-            background-color:#4a5759;
             color: #f7e1d7;
             display: flex;
             align-items:center;
@@ -33,7 +40,14 @@
 
         i{
             font-size:2.5rem;
-            color: #f7e1d7;
+            color:var(--text);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        i:hover{
+            /* border: 2px solid var(--text); */
+            color:var(--main);
         }
 
          main{
@@ -44,7 +58,6 @@
             justify-content:center;
             padding-left: 10%;
             padding-right:10%; 
-            background-color:#b0c4b1;
             color:#f7e1d7;;
         }
 
@@ -56,7 +69,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-             background-color: #dedbd2;
+            background-color: var(--background);
         }
 
         form{
@@ -91,10 +104,17 @@
             height:3rem;
             width: 10rem;
             margin-top:1rem;
-            border: 2px solid #f7e1d7;
-            background-color: #4a5759; 
-            color:#f7e1d7;
+            transition: 0.4s;
+            background-color: var(--text);
+            color: var(--secbg);
+            border:2px solid var(--main);
             border-radius: 1rem;
+        }
+
+        form button:hover{
+            border: 2px solid var(--text);
+            background-color:var(--bg);
+            color:var(--text);
         }
     </style>
 </head>
