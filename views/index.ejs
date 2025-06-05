@@ -6,7 +6,14 @@
     <title>Home</title>
     <style>
 
-        /* #4a5759  , #b0c4b1 , #dedbd2 , #f7e1d7 , #edafb8*/
+
+         :root {
+      --main: #adb5bd;
+      --background: #f8f9fa;
+      --text: #212529;
+      --secbg: #ced4da;
+      --bg: #dee2e6;
+    }
         *{
             margin: 0;
             padding: 0;
@@ -14,16 +21,20 @@
             list-style-type: none;
             font-family:Arial, Helvetica, sans-serif;
             text-decoration: none;
+            color: var(--text);
         }
 
+        body{
+            background-color:var(--background);
+        }
         a{
-            color:#f7e1d7;
+            color:var(--text);
         }
         nav{
             height: 12vh;
             width:80%;
-            background-color:#4a5759;
-            color: #f7e1d7;
+            /* background-color:#4a5759;
+            color: #f7e1d7; */
             display: flex;
             align-items:center;
             justify-content: space-between;
@@ -41,6 +52,11 @@
         ul li{
             font-size: 1.3rem;
             font-weight: 500;
+            transition: 0.4s ease-in-out;
+        }
+
+        ul li:hover{
+            color: var(--main);
         }
 
         main{
@@ -51,14 +67,11 @@
             justify-content: space-between;
             padding-left: 10%;
             padding-right:10%; 
-            background-color: #dedbd2;
-            color:#f7e1d7;;
         }
 
         .container{
             height: 70vh;
             width: 100%;
-            background-color:#b0c4b1;
             border-radius: 5rem;
             display: flex;
             align-items: center;
@@ -68,7 +81,6 @@
         .pt1{
             height: 100%;
             width: 100%;
-            background-color: #4a5759;
             display: flex;
             justify-content:center;
             align-items:space-arround;
@@ -78,25 +90,26 @@
          .pt2{
             height: 100%;
             width: 100%;
-            background-color: #d2e1e3;
         }
 
         .pt1 h2{
-            font-size:3rem;
+            font-size:4rem;
             font-weight: 700;
             font-family: 'Inter', sans-serif;
         }
-
+        .pt1 h2 span{
+            color:#6c757d;
+        }
         .pt1 p{
-            font-size:1.2rem;
+            font-size:1.3rem;
             font-weight: 300;
             font-family: 'Inter', sans-serif;
             margin-top: 1rem;
         }
 
         .pt1 button{
-            height: 3rem;
-            width:8rem;
+            height: 3.5rem;
+            width:9rem;
             outline: none;
             border: 2px solid #f7e1d7;
             background-color: #4a5759;
@@ -115,7 +128,7 @@
         #cir{
             height: 30rem;
             width: 30rem;
-            background-color: #b0c4b1;
+            background-color: var(--secbg);
             border-radius: 50%;
         }
     </style>

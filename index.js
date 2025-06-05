@@ -19,7 +19,6 @@ app.use(session({
   cookie: { maxAge: 30 * 60 * 1000 } 
 }));
 
-
 app.listen(port, () => {
     console.log(`app working fine at port ${port}`);
 })
