@@ -44,3 +44,7 @@ app.get("/templates" , (req,res) => {
     console.log(data);
     res.render("template.ejs" , { data })
 })
+
+app.get("/resume2" , (req,res) => {
+    res.render("resume2.ejs");
+})

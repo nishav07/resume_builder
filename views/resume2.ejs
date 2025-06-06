@@ -22,35 +22,49 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      color: var(--text-light);
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--background);
-      color: var(--text-dark);
-      line-height: 1.6;
-      padding: 40px 20px;
     }
 
     main{
         height: 100vh;
-        width: 80%;
-        padding-left: 10%;
-        padding-right:10%; 
+        width: 100%;
+        padding-top: 3%;
         background-color: #eff6e0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     .resume{
-
+        height:90%;
+        width: 35%;
+        background-color: var(--bg-dark);
+        padding: 2%;
     }
 
+    .img{
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        border: 2px solid var(--skill-border);
+    }
     </style>
 </head>
 <body>
     <main>
         <div class="resume">
-
+           <div class="nav">
+            <div class="img"></div>
+            <h2>Nishav Chaudhary</h2>
+            <p>Devloper</p>
+           </div>
         </div>
+
+        <button id="down">Download</button>
     </main>
 </body>
 </html>
