@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume 2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
 
@@ -46,11 +47,53 @@
         padding: 2%;
     }
 
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid var(--skill-border);
+        padding-bottom:3%;
+    }
+
+    .nav h2{
+        font-weight: 700;
+        font-size: 2.3rem;
+    }
+    .nav h4{
+        font-weight: 200;
+        font-size: 1.5rem;
+        margin-bottom:0.5rem;
+        color: var(--accent-blue);
+    }
     .img{
         height: 130px;
         width: 130px;
         border-radius: 50%;
         border: 2px solid var(--skill-border);
+    }
+
+    .nav p{
+        font-size: 1rem;
+        color: var(--text-muted);
+    }
+
+    .nav i{
+        color: var(--accent-blue);
+    }
+
+    section{
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .summary{
+        width: 50%;
+    }
+
+    .skill{
+       
     }
     </style>
 </head>
@@ -59,9 +102,23 @@
         <div class="resume">
            <div class="nav">
             <div class="img"></div>
-            <h2>Nishav Chaudhary</h2>
-            <p>Devloper</p>
+            <div class="text">
+                <h2>Nishav Chaudhary</h2>
+                <h4>Devloper</h4>
+                <p><i class="fa-solid fa-envelope"></i>&nbsp; @email.com &nbsp;&nbsp;|&nbsp;&nbsp; <i class="fa-solid fa-phone"></i>&nbsp;9148119744 <br><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;Bangalore</p>
+            </div>
            </div>
+
+           <section>
+            <div class="summary">
+                <h3>Summary</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A suscipit ex quos recusandae dolorem veritatis et cupiditate sed possimus illo. Obcaecati repudiandae, sequi pariatur quasi eos sint quam ad corporis.</p>
+            </div>
+            <div class="skill">
+                <h3>Skill</h3>
+                <p>skills</p>
+            </div>
+           </section>
         </div>
 
         <button id="down">Download</button>
