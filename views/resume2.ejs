@@ -82,29 +82,38 @@
     }
 
     section{
-        margin-top: 5%;
+        padding: 5% 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-bottom: 2px solid var(--skill-border);
+        color: var(--text-light);
     }
 
     .summary{
         width: 50%;
-        height: 150px;
-        background-color:var(--skill-bg);
+        height: 160px;
         border-right: 2px solid var(--skill-border);
     }
 
+    .summary p{
+        font-size: 0.8rem;
+    }
      .skill{
         width: 50%;
-        height: 150px;
-        background-color:var(--skill-bg);
+        height: 160px;
         border-left: 2px solid var(--skill-border);
         padding-left: 1rem;
     }
 
     section p{
-        margin: 1rem;
+        margin-top:0.5rem;
+    }
+
+    section p i{
+        font-size: 1.2rem;
+        color: var(--accent-blue);
+        margin-right: 0.5rem;
     }
    
 
@@ -125,11 +134,15 @@
            <section>
             <div class="summary">
                 <h3>Summary</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A suscipit ex quos recusandae dolorem veritatis et cupiditate sed possimus illo. Obcaecati repudiandae, sequi pariatur quasi eos sint quam ad corporis.</p>
+               <p>
+  I am a passionate and driven individual based in Rampur Jalalpur. I hold a degree in CEH from CEH College with a CGPA of 9. With 4 years of hands-on experience, I have developed strong skills in hacking. I am committed to applying my knowledge in challenging environments and continuously growing as a professional.
+</p>
+
+
             </div>
             <div class="skill">
                 <h3>Skill</h3>
-                <p>skills</p>
+                <p><i class="fa-regular fa-user"></i>MERN</p>
             </div>
            </section>
         </div>
