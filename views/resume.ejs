@@ -17,23 +17,29 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      word-break: break-word;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text-dark);
-      line-height: 1.6;
-      padding: 40px 20px;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .resume-container {
-      max-width: 850px;
-      margin: auto;
+      height: 90vh;
+      width: 35vw;
       background: var(--section-bg);
       box-shadow: 0 0 20px rgba(0,0,0,0.05);
       border-radius: 16px;
-      overflow: hidden;
+      overflow-y: auto;
+      padding-bottom: 20px;
     }
 
     .header {
@@ -41,6 +47,8 @@
       color: white;
       padding: 30px;
       text-align: center;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
     }
 
     .header h1 {
@@ -53,7 +61,7 @@
     }
 
     .section {
-      padding: 25px 30px;
+      padding: 20px 25px;
       border-bottom: 1px solid #eee;
     }
 
@@ -63,7 +71,7 @@
 
     .section h2 {
       font-size: 18px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: var(--primary);
       position: relative;
       padding-left: 15px;
@@ -97,8 +105,7 @@
     }
 
     .download-btn {
-      text-align: center;
-      padding: 25px;
+      padding-top: 20px;
     }
 
     button {
@@ -115,15 +122,10 @@
       background-color: #4b44c3;
     }
 
-    .faded {
-      color: #888;
-      font-size: 13px;
-    }
-
-    .section p.empty-fill {
+    .empty-fill {
       background: #f1f1f1;
       color: #aaa;
-      padding: 12px;
+      padding: 10px;
       border-radius: 8px;
       font-style: italic;
     }
