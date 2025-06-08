@@ -48,6 +48,30 @@
         border-radius: 2rem;
     }
 
+@media print {
+  .resume {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    box-sizing: border-box;
+    border-radius: 0;
+    background: white;
+    color: black;
+  }
+
+  body, html, main {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  #down {
+    display: none; /* hide download button in PDF */
+  }
+}
+
+
+    
     .nav{
         display: flex;
         align-items: center;
@@ -199,7 +223,30 @@
            </section>
         </div>
 
-        <button id="down">Download</button>
+        <button id="down" onclick="downloadPDF()">Download</button>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+//   function downloadPDF() {
+//     const resume = document.getElementsByClassName('resume')[0];
+//     html2pdf().from(resume).save('Resume.pdf');
+//   }
+
+function downloadPDF() {
+  const resume = document.getElementsByClassName('resume')[0];
+  const opt = {
+    margin:       0,
+    filename:     'resume2.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(resume).save();
+}
+
+
+</script>
 </body>
 </html>
