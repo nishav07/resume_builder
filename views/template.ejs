@@ -61,18 +61,43 @@
         justify-content: space-around;
     }
 
-    main div{
+    main a{
         height: 80vh;
-        width: 35%;
+        width: 42%;
         min-width:200px;
-        background-color: var(--text);
+        background-color: white;
+        border-radius: 2rem;
+        transition: 0.3s;
     }
 
     .res1{
+        background-image: url("/resume1.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+         height: 80vh;
+        width: 42%;
+        min-width:200px;
+        background-color: white;
+        border-radius: 2rem;
+        height:100%;
+        width:100%;
+    }
 
-        background-image: url("./resume2.png");
-        /* background-position: center;
-        background-size: cover; */
+    .res2{
+        background-image: url("/resume2.png");
+        background-position: center;
+        background-size: contain;
+        height:100%;
+        width:100%;
+        min-width:200px;
+        background-color: white;
+        border-radius: 2rem;
+    }
+
+    main a:hover{
+        border: 2px solid var(--main);
+        box-shadow: 4px 6px 0px var(--main);
     }
     </style>
 </head>
@@ -82,8 +107,8 @@
        <a href="http://localhost:8080/"> <i class="fa-solid fa-circle-left"></i></a>
     </nav>
     <main>
-        <div class="res1"></div>
-        <div class="res2"></div>
+       <a href=""> <div class="res1"></div></a>
+        <a href=""><div class="res2"></div></a>
     </main>
 </body>
 </html>
