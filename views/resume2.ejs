@@ -182,8 +182,8 @@
            <div class="nav">
             <div class="img"></div>
             <div class="text">
-                <h2>Nishav Chaudhary</h2>
-                <h4>Devloper</h4>
+                <h2><%= data.name %></h2>
+                <h4><%= data.skills %></h4>
                 <p><i class="fa-solid fa-envelope"></i>&nbsp; @email.com &nbsp;&nbsp;|&nbsp;&nbsp; <i class="fa-solid fa-phone"></i>&nbsp;9148119744 <br><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;Bangalore</p>
             </div>
            </div>
@@ -192,17 +192,17 @@
             <div class="summary">
                 <h3>Summary</h3>
                <p>
-  I am a passionate and driven individual based in Rampur Jalalpur. I hold a degree in CEH from CEH College with a CGPA of 9. With 4 years of hands-on experience, I have developed strong skills in hacking. I am committed to applying my knowledge in challenging environments and continuously growing as a professional.
+  I am a passionate and driven individual based in <%= data.adress %>. I hold a degree in <%= data.degree %> from <%= data.collage %> College with a CGPA of <%= data.CGPA %>. With <%= data.experience %>years of hands-on experience, I have developed strong skills in <%= data.skills %>. I am committed to applying my knowledge in challenging environments and continuously growing as a professional.
 </p>
 
             </div>
             <div class="skill">
                 <h3>Education & degree</h3>
-                <p><i class="fa-solid fa-user-graduate"></i>CEH</p>
+                <p><i class="fa-solid fa-user-graduate"></i><%= data.degree %></p>
                 <h3>Collage & final year</h3>
-                <p><i class="fa-solid fa-school-flag"></i>iit dholakpur 2024</p>
+                <p><i class="fa-solid fa-school-flag"></i><%= data.collage %> in <%= data.passyear %></p>
                 <h3>CGPA</h3>
-                <p><i class="fa-solid fa-award"></i>9</p>
+                <p><i class="fa-solid fa-award"></i><%= data.CGPA %></p>
             </div>
            </section>
 
@@ -211,9 +211,9 @@
            <section>
             <div class="skill" id="skill">
                 <h3>Skills</h3>
-                <p><i class="fa-solid fa-laptop-code"></i></i>MERN</p>
+                <p><i class="fa-solid fa-laptop-code"></i><%= data.skills %></p>
                 <h3>Project</h3>
-                <p><i class="fa-solid fa-code-fork"></i></i>Rekon Tool</p>
+                <p><i class="fa-solid fa-code-fork"></i><%= data.project %></p>
             </div>
 
             <div id="sum" class="summary">
