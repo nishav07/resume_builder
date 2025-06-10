@@ -37,15 +37,20 @@ app.post("/form" , (req,res) => {
     console.log(req.body);
     const data = req.body;
     req.session.resumedata = req.body;
-    res.render("resume.ejs" , { data });
+    res.redirect("/templates")
 })
 
 app.get("/templates" , (req,res) => {
-    const data = req.session.resumedata;
-    console.log(data);
-    res.render("template.ejs" , { data })
+    res.render("template.ejs")
 })
 
+app.get("/resume1" , (req,res) => {
+    const data = req.session.resumedata;
+    console.log(data);
+    res.render("resume.ejs" , { data });
+})
 app.get("/resume2" , (req,res) => {
-    res.render("resume2.ejs");
+    const data = req.session.resumedata;
+    console.log(data);
+    res.render("resume2.ejs" , { data });
 })
